@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabange Mbuyu Sylvain - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1117, #1a2332);
+            color: #f0f6fc;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(22, 27, 34, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.8rem;
+            color: #58a6ff;
+            font-weight: 700;
+            border-bottom: 3px solid #30363d;
+            padding-bottom: 0.5rem;
+        }
+        h1 span {
+            color: #f0f6fc;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #8b949e;
+            margin: 1rem 0 2rem;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.5rem;
+        }
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin: 1rem 0 2rem;
+        }
+        .badge {
+            background: #21262d;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #30363d;
+        }
+        .badge:hover {
+            border-color: #58a6ff;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: all 0.3s;
+        }
+        .card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+        .card .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.8rem 0;
+        }
+        .card .tech span {
+            background: #21262d;
+            padding: 0.15rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #8b949e;
+            border: 1px solid #30363d;
+        }
+        .card .result {
+            color: #3fb950;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 0.8rem;
+            transition: background 0.3s;
+            border: none;
+            font-size: 0.9rem;
+        }
+        .btn:hover {
+            background: #2ea043;
+        }
+        .btn-github {
+            background: #21262d;
+            border: 1px solid #30363d;
+        }
+        .btn-github:hover {
+            background: #30363d;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .contact a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KABANGE <span>MBUYA SYLVAIN</span></h1>
+        <div class="subtitle">Data Scientist | Big Data & Cloud Engineer</div>
 
+        <div class="badge-container">
+            <span class="badge">🎓 Master 2 @HorizonSchool</span>
+            <span class="badge">🏅 IBM • NVIDIA • Meta</span>
+            <span class="badge">📍 Sousse, Tunisie</span>
+            <span class="badge">🔬 IA • Computer Vision • NLP</span>
+        </div>
+
+        <h2>🚀 Projets</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🌱 Smart Agriculture</h3>
+                <p>Détection des maladies des plantes par Deep Learning.</p>
+                <div class="tech">
+                    <span>PyTorch</span>
+                    <span>YOLOv8</span>
+                    <span>DeepLabV3+</span>
+                    <span>FastAPI</span>
+                </div>
+                <div class="result">✅ 97,8% accuracy • IoU 95,76%</div>
+                <a href="https://github.com/kabangesylvain-ui/smart-agriculture-plant-disease" class="btn btn-github" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <div class="card">
+                <h3>🏢 Gestion des Événements</h3>
+                <p>Stage GFI Tunisie - Application web Laravel + Power BI.</p>
+                <div class="tech">
+                    <span>Laravel</span>
+                    <span>MySQL</span>
+                    <span>Power BI</span>
+                    <span>PHP</span>
+                </div>
+                <div class="result">✅ 92 réservations • 7 événements • 4 organisateurs</div>
+                <a href="https://github.com/kabangesylvain-ui/gestion-evenements-reservation-salles" class="btn btn-github" target="_blank">Voir sur GitHub</a>
+            </div>
+
+            <div class="card">
+                <h3>🧠 NLP - RNN vs LSTM</h3>
+                <p>Classification de sentiments sur IMDb avec RNN et LSTM.</p>
+                <div class="tech">
+                    <span>PyTorch</span>
+                    <span>RNN</span>
+                    <span>LSTM</span>
+                    <span>Streamlit</span>
+                </div>
+                <div class="result">✅ LSTM 84,30% accuracy (+11,06 pts)</div>
+                <a href="https://github.com/kabangesylvain-ui/nlp-rnn-lstm-sentiment-analysis" class="btn btn-github" target="_blank">Voir sur GitHub</a>
+            </div>
+        </div>
+
+        <h2>🛠️ Compétences techniques</h2>
+        <div class="badge-container">
+            <span class="badge">Python</span>
+            <span class="badge">PyTorch</span>
+            <span class="badge">Deep Learning</span>
+            <span class="badge">Computer Vision</span>
+            <span class="badge">NLP</span>
+            <span class="badge">Spark</span>
+            <span class="badge">Hadoop</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Docker</span>
+            <span class="badge">MLflow</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">SQL</span>
+        </div>
+
+        <h2>🏅 Certifications</h2>
+        <div class="badge-container">
+            <span class="badge">NVIDIA DLI (6)</span>
+            <span class="badge">IBM (10+)</span>
+            <span class="badge">Meta (7)</span>
+            <span class="badge">Fractal Analytics</span>
+        </div>
+
+        <h2>📫 Me contacter</h2>
+        <div class="contact">
+            <a href="https://www.linkedin.com/in/kabange-mbuya-sylvain-a662983b2" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:kabange.sylvain@horizon-university.tn">📧 Email</a>
+            <a href="https://github.com/kabangesylvain-ui" target="_blank">🐙 GitHub</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Kabange Mbuyu Sylvain — <em>"Transformer les données en solutions intelligentes."</em></p>
+        </footer>
+    </div>
+</body>
+</html>
