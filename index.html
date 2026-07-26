@@ -411,11 +411,11 @@
     </div>
 
     <!-- ========================================= -->
-    <!-- GALERIE D'IMAGES (10 images)             -->
+    <!-- GALERIE D'IMAGES                         -->
     <!-- ========================================= -->
     <h2 class="section-title" id="galerie"><i class="fas fa-images"></i> Galerie · Projets</h2>
     <div class="gallery-grid" id="gallery">
-      <!-- Les 10 images seront injectées par JavaScript -->
+      <!-- Injecté par JavaScript -->
     </div>
 
     <!-- ========================================= -->
@@ -481,33 +481,36 @@
   <!-- ========================================= -->
   <script>
     // -----------------------------------------
-    // 1. LISTE DES 10 IMAGES
+    // 1. LISTE EXACTE DES IMAGES (chemins corrigés)
     // -----------------------------------------
-      const images = [
-    { src: 'Architecture.png', alt: 'Architecture du projet' },
-    { src: 'Classification.png', alt: 'Classification' },
-    { src: 'RNN et LSTM.png', alt: 'RNN et LSTM' },
-    { src: 'Distribution.png', alt: 'Distribution' },
-    { src: 'R1.png', alt: 'Résultat 1' },
-    { src: 'Graphique.png', alt: 'Graphique' },
-    { src: 'Controle de version.png', alt: 'Contrôle de version' },
-    { src: 'Data science.png', alt: 'Data Science' },
-    { src: 'Matrice de confusion.png', alt: 'Matrice de confusion' },
-    { src: 'capteur IO.png', alt: 'Capteurs IoT' }
-];
+    const images = [
+      { src: 'Architecture.png', alt: 'Architecture' },
+      { src: 'Classification.png', alt: 'Classification' },
+      { src: 'RNN et LSTM.png', alt: 'RNN et LSTM' },
+      { src: 'Distribution.png', alt: 'Distribution' },
+      { src: 'R1.png', alt: 'Résultat 1' },
+      { src: 'Graphique.png', alt: 'Graphique' },
+      { src: 'Controle de version.png', alt: 'Contrôle de version' },
+      { src: 'Data science.png', alt: 'Data Science' },
+      { src: 'Matrice de confusion.png', alt: 'Matrice de confusion' },
+      { src: 'capteur IO.png', alt: 'Capteurs IoT' }
+    ];
 
     // -----------------------------------------
     // 2. AFFICHAGE DE LA GALERIE
     // -----------------------------------------
     function chargerGalerie() {
       const conteneur = document.getElementById('gallery');
+      if (!conteneur) return;
       conteneur.innerHTML = '';
       images.forEach(img => {
         const card = document.createElement('div');
         card.className = 'card';
-        // Ajout d'un fallback si l'image n'existe pas
         card.innerHTML = `
-          <img src="images/${img.src}" alt="${img.alt}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a2332/58a6ff?text=Image+introuvable'"/>
+          <img src="images/${encodeURIComponent(img.src)}"
+               alt="${img.alt}"
+               loading="lazy"
+               onerror="this.src='https://placehold.co/400x300/1a2332/58a6ff?text=${encodeURIComponent(img.alt)}'"/>
           <p>${img.alt}</p>
         `;
         conteneur.appendChild(card);
@@ -515,12 +518,11 @@
     }
 
     // -----------------------------------------
-    // 3. NAVBAR ACTIVE (scroll spy léger)
+    // 3. NAVBAR ACTIVE (scroll spy)
     // -----------------------------------------
     function activeNavOnScroll() {
-      const sections = document.querySelectorAll('.section-title, h1, h2, .portfolio-card');
+      const sections = document.querySelectorAll('.section-title, .portfolio-card');
       const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
       let currentId = '';
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -528,7 +530,6 @@
           currentId = section.id || '';
         }
       });
-
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentId}`) {
@@ -541,22 +542,23 @@
     // 4. BOUTON RETOUR EN HAUT
     // -----------------------------------------
     const scrollBtn = document.getElementById('scrollTopBtn');
+    if (scrollBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = 'flex';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+        activeNavOnScroll();
+      });
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollBtn.style.display = 'flex';
-      } else {
-        scrollBtn.style.display = 'none';
-      }
-      activeNavOnScroll();
-    });
-
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
     // -----------------------------------------
-    // 5. INIT
+    // 5. INITIALISATION AU CHARGEMENT
     // -----------------------------------------
     document.addEventListener('DOMContentLoaded', () => {
       chargerGalerie();
