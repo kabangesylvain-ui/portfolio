@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 
   <style>
-    /* ---------- RESET & GLOBAL ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -120,6 +119,30 @@
       box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
     }
 
+    /* ---------- CARTE PRÉSENTATION ---------- */
+    .presentation-card {
+      background: linear-gradient(145deg, #161b22, #1e2633);
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 1.8rem 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+    .presentation-card:hover {
+      border-color: #58a6ff;
+    }
+    .presentation-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #c9d1d9;
+      margin-bottom: 0.8rem;
+    }
+    .presentation-card .highlight-text {
+      color: #58a6ff;
+      font-weight: 600;
+    }
+
     /* ---------- TITRES DE SECTION ---------- */
     .section-title {
       color: #58a6ff;
@@ -154,7 +177,6 @@
       font-size: 1.2rem;
     }
 
-    /* ---------- TAGS TECHNIQUES ---------- */
     .tech-tag {
       background: #21262d;
       padding: 0.15rem 0.8rem;
@@ -171,7 +193,6 @@
       font-size: 0.9rem;
     }
 
-    /* ---------- BOUTONS ---------- */
     .btn-outline-github {
       border: 1px solid #30363d;
       color: #c9d1d9;
@@ -191,7 +212,6 @@
       color: #fff;
     }
 
-    /* ---------- LIENS DE CONTACT ---------- */
     .contact-link {
       color: #58a6ff;
       text-decoration: none;
@@ -211,7 +231,7 @@
       text-decoration: none;
     }
 
-    /* ---------- GALERIE D'IMAGES ---------- */
+    /* ---------- GALERIE ---------- */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -244,7 +264,6 @@
       color: #8b949e;
     }
 
-    /* ---------- PIED DE PAGE ---------- */
     footer {
       border-top: 1px solid #30363d;
       padding-top: 1.8rem;
@@ -254,7 +273,6 @@
       font-size: 0.9rem;
     }
 
-    /* ---------- BOUTON SCROLL TOP ---------- */
     .scroll-top {
       position: fixed;
       bottom: 2rem;
@@ -279,30 +297,21 @@
       background: #79c0ff;
     }
 
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
-      .portfolio-card {
-        padding: 1.5rem;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      .subtitle {
-        font-size: 1rem;
-      }
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      }
-      .custom-navbar .navbar-brand {
-        font-size: 1.1rem;
-      }
+      .portfolio-card { padding: 1.5rem; }
+      h1 { font-size: 2.2rem; }
+      .subtitle { font-size: 1rem; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      .custom-navbar .navbar-brand { font-size: 1.1rem; }
+      .presentation-card { padding: 1.2rem; }
+      .presentation-card p { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- ========================================= -->
-  <!-- NAVBAR DYNAMIQUE (responsive + JS)       -->
+  <!-- NAVBAR                                    -->
   <!-- ========================================= -->
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid">
@@ -348,6 +357,29 @@
       <span class="badge-custom"><i class="fas fa-graduation-cap me-1"></i>Master 2 @HorizonSchool</span>
       <span class="badge-custom"><i class="fas fa-certificate me-1"></i>IBM · NVIDIA · Meta</span>
       <span class="badge-custom"><i class="fas fa-microchip me-1"></i>IA · Computer Vision · NLP</span>
+      <span class="badge-custom"><i class="fas fa-search me-1"></i>Recherche stage 4 mois</span>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- PRÉSENTATION (NOUVEAU)                   -->
+    <!-- ========================================= -->
+    <div class="presentation-card">
+      <p>
+        <i class="fas fa-quote-left me-2" style="color:#58a6ff;"></i>
+        Étudiant en <span class="highlight-text">Master 2 Big Data & Data Science</span> à l'Horizon School of Digital Technologies,
+        certifié <span class="highlight-text">IBM, NVIDIA et Meta</span>. Passionné par l'<span class="highlight-text">Intelligence Artificielle</span>,
+        la <span class="highlight-text">Computer Vision</span> et le <span class="highlight-text">NLP</span>.
+      </p>
+      <p>
+        <i class="fas fa-rocket me-2" style="color:#3fb950;"></i>
+        Je conçois des solutions data de bout en bout, allant de la <span class="highlight-text">Business Intelligence</span>
+        au <span class="highlight-text">Deep Learning</span>, en passant par les architectures <span class="highlight-text">Big Data</span>
+        et <span class="highlight-text">Cloud AWS</span>.
+      </p>
+      <p>
+        <i class="fas fa-bullseye me-2" style="color:#f0883e;"></i>
+        <span class="highlight-text">Objectif :</span> Trouver un stage de 4 mois en Data Science / Big Data en Tunisie pour mettre mes compétences au service de projets innovants.
+      </p>
     </div>
 
     <!-- ========================================= -->
@@ -355,16 +387,13 @@
     <!-- ========================================= -->
     <h2 class="section-title" id="projets"><i class="fas fa-rocket"></i> Projets</h2>
     <div class="row g-4">
-      <!-- Carte 1 : Smart Agriculture -->
       <div class="col-md-4">
         <div class="project-card">
           <h5><i class="fas fa-leaf me-2" style="color:#3fb950;"></i>Smart Agriculture</h5>
           <p class="text-secondary" style="font-size:0.95rem;">Détection des maladies des plantes par Deep Learning.</p>
           <div>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">YOLOv8</span>
-            <span class="tech-tag">DeepLabV3+</span>
-            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">PyTorch</span><span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">DeepLabV3+</span><span class="tech-tag">FastAPI</span>
           </div>
           <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 97,8% accuracy · IoU 95,76%</div>
           <a href="https://github.com/kabangesylvain-ui/smart-agriculture-plant-disease" target="_blank" class="btn-outline-github mt-3">
@@ -372,17 +401,13 @@
           </a>
         </div>
       </div>
-
-      <!-- Carte 2 : Gestion des Événements -->
       <div class="col-md-4">
         <div class="project-card">
           <h5><i class="fas fa-building me-2" style="color:#f0883e;"></i>Gestion des Événements</h5>
           <p class="text-secondary" style="font-size:0.95rem;">Stage GFI Tunisie – App Laravel + Power BI.</p>
           <div>
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Power BI</span>
-            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Power BI</span><span class="tech-tag">PHP</span>
           </div>
           <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 92 réservations · 7 événements</div>
           <a href="https://github.com/kabangesylvain-ui/gestion-evenements-reservation-salles" target="_blank" class="btn-outline-github mt-3">
@@ -390,17 +415,13 @@
           </a>
         </div>
       </div>
-
-      <!-- Carte 3 : NLP -->
       <div class="col-md-4">
         <div class="project-card">
           <h5><i class="fas fa-brain me-2" style="color:#d2a8ff;"></i>NLP - RNN vs LSTM</h5>
           <p class="text-secondary" style="font-size:0.95rem;">Classification de sentiments sur IMDb.</p>
           <div>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">RNN</span>
-            <span class="tech-tag">LSTM</span>
-            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">PyTorch</span><span class="tech-tag">RNN</span>
+            <span class="tech-tag">LSTM</span><span class="tech-tag">Streamlit</span>
           </div>
           <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> LSTM 84,30% (+11,06 pts)</div>
           <a href="https://github.com/kabangesylvain-ui/nlp-rnn-lstm-sentiment-analysis" target="_blank" class="btn-outline-github mt-3">
@@ -411,30 +432,22 @@
     </div>
 
     <!-- ========================================= -->
-    <!-- GALERIE D'IMAGES                         -->
+    <!-- GALERIE                                  -->
     <!-- ========================================= -->
     <h2 class="section-title" id="galerie"><i class="fas fa-images"></i> Galerie · Projets</h2>
-    <div class="gallery-grid" id="gallery">
-      <!-- Injecté par JavaScript -->
-    </div>
+    <div class="gallery-grid" id="gallery"></div>
 
     <!-- ========================================= -->
     <!-- COMPÉTENCES                              -->
     <!-- ========================================= -->
     <h2 class="section-title" id="competences"><i class="fas fa-tools"></i> Compétences</h2>
     <div class="d-flex flex-wrap gap-2 mb-3">
-      <span class="badge-custom">Python</span>
-      <span class="badge-custom">PyTorch</span>
-      <span class="badge-custom">Deep Learning</span>
-      <span class="badge-custom">Computer Vision</span>
-      <span class="badge-custom">NLP</span>
-      <span class="badge-custom">Spark</span>
-      <span class="badge-custom">Hadoop</span>
-      <span class="badge-custom">AWS</span>
-      <span class="badge-custom">Docker</span>
-      <span class="badge-custom">MLflow</span>
-      <span class="badge-custom">Power BI</span>
-      <span class="badge-custom">SQL</span>
+      <span class="badge-custom">Python</span><span class="badge-custom">PyTorch</span>
+      <span class="badge-custom">Deep Learning</span><span class="badge-custom">Computer Vision</span>
+      <span class="badge-custom">NLP</span><span class="badge-custom">Spark</span>
+      <span class="badge-custom">Hadoop</span><span class="badge-custom">AWS</span>
+      <span class="badge-custom">Docker</span><span class="badge-custom">MLflow</span>
+      <span class="badge-custom">Power BI</span><span class="badge-custom">SQL</span>
     </div>
 
     <!-- ========================================= -->
@@ -464,25 +477,16 @@
       </a>
     </div>
 
-    <!-- ---------- FOOTER ---------- -->
     <footer>
       <p>© 2026 Kabange Mbuyu Sylvain — <em>“Transformer les données en solutions intelligentes.”</em></p>
     </footer>
   </div>
 
   <!-- ========================================= -->
-  <!-- BOOTSTRAP JS                              -->
+  <!-- BOOTSTRAP + JS                           -->
   <!-- ========================================= -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
-
-  <!-- ========================================= -->
-  <!-- JAVASCRIPT : GALERIE, NAV, SCROLL TOP    -->
-  <!-- ========================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // -----------------------------------------
-    // 1. LISTE EXACTE DES IMAGES (chemins corrigés)
-    // -----------------------------------------
     const images = [
       { src: 'Architecture.png', alt: 'Architecture' },
       { src: 'Classification.png', alt: 'Classification' },
@@ -496,9 +500,6 @@
       { src: 'capteur IO.png', alt: 'Capteurs IoT' }
     ];
 
-    // -----------------------------------------
-    // 2. AFFICHAGE DE LA GALERIE
-    // -----------------------------------------
     function chargerGalerie() {
       const conteneur = document.getElementById('gallery');
       if (!conteneur) return;
@@ -517,9 +518,6 @@
       });
     }
 
-    // -----------------------------------------
-    // 3. NAVBAR ACTIVE (scroll spy)
-    // -----------------------------------------
     function activeNavOnScroll() {
       const sections = document.querySelectorAll('.section-title, .portfolio-card');
       const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -538,9 +536,6 @@
       });
     }
 
-    // -----------------------------------------
-    // 4. BOUTON RETOUR EN HAUT
-    // -----------------------------------------
     const scrollBtn = document.getElementById('scrollTopBtn');
     if (scrollBtn) {
       window.addEventListener('scroll', () => {
@@ -551,15 +546,11 @@
         }
         activeNavOnScroll();
       });
-
       scrollBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 
-    // -----------------------------------------
-    // 5. INITIALISATION AU CHARGEMENT
-    // -----------------------------------------
     document.addEventListener('DOMContentLoaded', () => {
       chargerGalerie();
       activeNavOnScroll();
