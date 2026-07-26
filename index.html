@@ -1,458 +1,568 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Kabange Mbuyu Sylvain - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kabange Mbuyu Sylvain · Portfolio</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 
-    <style>
-        /* ---------- RESET & GLOBAL ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0b0f1a, #1a2332);
-            color: #e6edf3;
-            min-height: 100vh;
-            padding: 2rem 1rem;
-        }
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0b0f1a, #1a2332);
+      color: #e6edf3;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      scroll-behavior: smooth;
+    }
 
-        /* ---------- CARTE PRINCIPALE ---------- */
-        .portfolio-card {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(22, 27, 34, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 32px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 25px 50px -8px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-        }
+    /* ---------- NAVBAR ---------- */
+    .custom-navbar {
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 1rem;
+      border-radius: 60px;
+      max-width: 1200px;
+      margin: 0 auto 2rem auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+    .custom-navbar .navbar-brand {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #f0f6fc;
+      letter-spacing: -0.02em;
+    }
+    .custom-navbar .navbar-brand .highlight {
+      color: #58a6ff;
+    }
+    .custom-navbar .nav-link {
+      color: #c9d1d9;
+      font-weight: 500;
+      margin: 0 0.3rem;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      transition: all 0.3s;
+    }
+    .custom-navbar .nav-link:hover,
+    .custom-navbar .nav-link.active {
+      color: #fff;
+      background: #21262d;
+    }
+    .custom-navbar .navbar-toggler {
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      padding: 0.4rem 0.7rem;
+    }
+    .custom-navbar .navbar-toggler:focus {
+      box-shadow: none;
+    }
 
-        /* ---------- TYPOGRAPHIE ---------- */
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-        h1 .highlight {
-            color: #58a6ff;
-        }
-        .subtitle {
-            font-size: 1.3rem;
-            color: #8b949e;
-            font-weight: 400;
-            margin-top: 0.25rem;
-        }
+    /* ---------- CARTE PRINCIPALE ---------- */
+    .portfolio-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(22, 27, 34, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 32px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
 
-        /* ---------- BADGES ---------- */
-        .badge-custom {
-            background: #21262d;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .badge-custom:hover {
-            border-color: #58a6ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
-        }
+    /* ---------- TYPOGRAPHIE ---------- */
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    h1 .highlight {
+      color: #58a6ff;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      color: #8b949e;
+      font-weight: 400;
+      margin-top: 0.25rem;
+    }
 
-        /* ---------- TITRES DE SECTION ---------- */
-        .section-title {
-            color: #58a6ff;
-            font-weight: 700;
-            font-size: 1.8rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #30363d;
-            padding-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
+    /* ---------- BADGES ---------- */
+    .badge-custom {
+      background: #21262d;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .badge-custom:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+    }
 
-        /* ---------- CARTES PROJETS ---------- */
-        .project-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            padding: 1.5rem;
-            height: 100%;
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            border-color: #58a6ff;
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px -8px rgba(88, 166, 255, 0.2);
-        }
-        .project-card h5 {
-            color: #58a6ff;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
+    /* ---------- TITRES DE SECTION ---------- */
+    .section-title {
+      color: #58a6ff;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-        /* ---------- TAGS TECHNIQUES ---------- */
-        .tech-tag {
-            background: #21262d;
-            padding: 0.15rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: #8b949e;
-            border: 1px solid #30363d;
-            display: inline-block;
-            margin: 0.2rem 0.2rem 0 0;
-        }
-        .result-badge {
-            color: #3fb950;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+    /* ---------- CARTES PROJETS ---------- */
+    .project-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px -8px rgba(88, 166, 255, 0.2);
+    }
+    .project-card h5 {
+      color: #58a6ff;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
 
-        /* ---------- BOUTONS ---------- */
-        .btn-outline-github {
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-            background: transparent;
-            border-radius: 30px;
-            padding: 0.35rem 1.2rem;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .btn-outline-github:hover {
-            background: #30363d;
-            border-color: #58a6ff;
-            color: #fff;
-        }
+    /* ---------- TAGS TECHNIQUES ---------- */
+    .tech-tag {
+      background: #21262d;
+      padding: 0.15rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      color: #8b949e;
+      border: 1px solid #30363d;
+      display: inline-block;
+      margin: 0.2rem 0.2rem 0 0;
+    }
+    .result-badge {
+      color: #3fb950;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-        /* ---------- LIENS DE CONTACT ---------- */
-        .contact-link {
-            color: #58a6ff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: all 0.2s;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            border: 1px solid transparent;
-        }
-        .contact-link:hover {
-            color: #fff;
-            border-color: #30363d;
-            background: #21262d;
-            text-decoration: none;
-        }
+    /* ---------- BOUTONS ---------- */
+    .btn-outline-github {
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      background: transparent;
+      border-radius: 30px;
+      padding: 0.35rem 1.2rem;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline-github:hover {
+      background: #30363d;
+      border-color: #58a6ff;
+      color: #fff;
+    }
 
-        /* ---------- GALERIE D'IMAGES ---------- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-        .gallery-grid .card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 0.8rem;
-            transition: all 0.3s;
-            text-align: center;
-        }
-        .gallery-grid .card:hover {
-            border-color: #58a6ff;
-            transform: scale(1.02);
-        }
-        .gallery-grid .card img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-        }
-        .gallery-grid .card p {
-            margin-top: 0.4rem;
-            font-size: 0.8rem;
-            color: #8b949e;
-        }
+    /* ---------- LIENS DE CONTACT ---------- */
+    .contact-link {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      border: 1px solid transparent;
+    }
+    .contact-link:hover {
+      color: #fff;
+      border-color: #30363d;
+      background: #21262d;
+      text-decoration: none;
+    }
 
-        /* ---------- PIED DE PAGE ---------- */
-        footer {
-            border-top: 1px solid #30363d;
-            padding-top: 1.8rem;
-            margin-top: 2.5rem;
-            text-align: center;
-            color: #8b949e;
-            font-size: 0.9rem;
-        }
+    /* ---------- GALERIE D'IMAGES ---------- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .gallery-grid .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 0.8rem;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    .gallery-grid .card:hover {
+      border-color: #58a6ff;
+      transform: scale(1.02);
+    }
+    .gallery-grid .card img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #0d1117;
+    }
+    .gallery-grid .card p {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #8b949e;
+    }
 
-        /* ---------- BOUTON SCROLL TOP ---------- */
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #58a6ff;
-            color: #0d1117;
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            font-size: 1.4rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(88, 166, 255, 0.4);
-            transition: all 0.3s;
-            z-index: 999;
-        }
-        .scroll-top:hover {
-            transform: scale(1.08);
-            background: #79c0ff;
-        }
+    /* ---------- PIED DE PAGE ---------- */
+    footer {
+      border-top: 1px solid #30363d;
+      padding-top: 1.8rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 768px) {
-            .portfolio-card { padding: 1.5rem; }
-            h1 { font-size: 2.2rem; }
-            .subtitle { font-size: 1rem; }
-            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-        }
-    </style>
+    /* ---------- BOUTON SCROLL TOP ---------- */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #58a6ff;
+      color: #0d1117;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(88, 166, 255, 0.4);
+      transition: all 0.3s;
+      z-index: 999;
+    }
+    .scroll-top:hover {
+      transform: scale(1.08);
+      background: #79c0ff;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .portfolio-card {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      .custom-navbar .navbar-brand {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- ========================================= -->
-    <!-- BOUTON RETOUR EN HAUT                    -->
-    <!-- ========================================= -->
-    <button class="scroll-top" id="scrollTopBtn" aria-label="Retour en haut">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- ========================================= -->
+  <!-- NAVBAR DYNAMIQUE (responsive + JS)       -->
+  <!-- ========================================= -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <span class="highlight">K</span>SM
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- ========================================= -->
-    <!-- PORTFOLIO                                -->
-    <!-- ========================================= -->
-    <div class="portfolio-card">
+  <!-- ========================================= -->
+  <!-- PORTFOLIO                                -->
+  <!-- ========================================= -->
+  <div class="portfolio-card" id="accueil">
 
-        <!-- ---------- EN-TÊTE ---------- -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-            <div>
-                <h1>KABANGE <span class="highlight">MBUYA SYLVAIN</span></h1>
-                <div class="subtitle">
-                    <i class="fas fa-code me-2"></i>Data Scientist · Big Data & Cloud Engineer
-                </div>
-            </div>
-            <div class="mt-2 mt-md-0">
-                <span class="badge-custom"><i class="fas fa-map-pin me-1"></i>Sousse, Tunisie</span>
-            </div>
+    <!-- ---------- EN-TÊTE ---------- -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+      <div>
+        <h1>KABANGE <span class="highlight">MBUYA SYLVAIN</span></h1>
+        <div class="subtitle">
+          <i class="fas fa-code me-2"></i>Data Scientist · Big Data & Cloud Engineer
         </div>
+      </div>
+      <div class="mt-2 mt-md-0">
+        <span class="badge-custom"><i class="fas fa-map-pin me-1"></i>Sousse, Tunisie</span>
+      </div>
+    </div>
 
-        <!-- ---------- BADGES ---------- -->
-        <div class="d-flex flex-wrap gap-2 mb-4">
-            <span class="badge-custom"><i class="fas fa-graduation-cap me-1"></i>Master 2 @HorizonSchool</span>
-            <span class="badge-custom"><i class="fas fa-certificate me-1"></i>IBM · NVIDIA · Meta</span>
-            <span class="badge-custom"><i class="fas fa-microchip me-1"></i>IA · Computer Vision · NLP</span>
-        </div>
-
-        <!-- ========================================= -->
-        <!-- PROJETS                                  -->
-        <!-- ========================================= -->
-        <h2 class="section-title"><i class="fas fa-rocket"></i> Projets</h2>
-        <div class="row g-4">
-            <!-- Carte 1 : Smart Agriculture -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <h5><i class="fas fa-leaf me-2" style="color:#3fb950;"></i>Smart Agriculture</h5>
-                    <p class="text-secondary" style="font-size:0.95rem;">Détection des maladies des plantes par Deep Learning.</p>
-                    <div>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">YOLOv8</span>
-                        <span class="tech-tag">DeepLabV3+</span>
-                        <span class="tech-tag">FastAPI</span>
-                    </div>
-                    <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 97,8% accuracy · IoU 95,76%</div>
-                    <a href="https://github.com/kabangesylvain-ui/smart-agriculture-plant-disease" target="_blank" class="btn-outline-github mt-3">
-                        <i class="fab fa-github"></i> Voir sur GitHub
-                    </a>
-                </div>
-            </div>
-
-            <!-- Carte 2 : Gestion des Événements -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <h5><i class="fas fa-building me-2" style="color:#f0883e;"></i>Gestion des Événements</h5>
-                    <p class="text-secondary" style="font-size:0.95rem;">Stage GFI Tunisie – App Laravel + Power BI.</p>
-                    <div>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">PHP</span>
-                    </div>
-                    <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 92 réservations · 7 événements</div>
-                    <a href="https://github.com/kabangesylvain-ui/gestion-evenements-reservation-salles" target="_blank" class="btn-outline-github mt-3">
-                        <i class="fab fa-github"></i> Voir sur GitHub
-                    </a>
-                </div>
-            </div>
-
-            <!-- Carte 3 : NLP -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <h5><i class="fas fa-brain me-2" style="color:#d2a8ff;"></i>NLP - RNN vs LSTM</h5>
-                    <p class="text-secondary" style="font-size:0.95rem;">Classification de sentiments sur IMDb.</p>
-                    <div>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">RNN</span>
-                        <span class="tech-tag">LSTM</span>
-                        <span class="tech-tag">Streamlit</span>
-                    </div>
-                    <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> LSTM 84,30% (+11,06 pts)</div>
-                    <a href="https://github.com/kabangesylvain-ui/nlp-rnn-lstm-sentiment-analysis" target="_blank" class="btn-outline-github mt-3">
-                        <i class="fab fa-github"></i> Voir sur GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========================================= -->
-        <!-- GALERIE D'IMAGES                          -->
-        <!-- ========================================= -->
-        <h2 class="section-title"><i class="fas fa-images"></i> Galerie - Smart Agriculture</h2>
-        <div class="gallery-grid" id="gallery">
-            <!-- Les images seront chargées par JavaScript -->
-        </div>
-
-        <!-- ========================================= -->
-        <!-- COMPÉTENCES                              -->
-        <!-- ========================================= -->
-        <h2 class="section-title"><i class="fas fa-tools"></i> Compétences</h2>
-        <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="badge-custom">Python</span>
-            <span class="badge-custom">PyTorch</span>
-            <span class="badge-custom">Deep Learning</span>
-            <span class="badge-custom">Computer Vision</span>
-            <span class="badge-custom">NLP</span>
-            <span class="badge-custom">Spark</span>
-            <span class="badge-custom">Hadoop</span>
-            <span class="badge-custom">AWS</span>
-            <span class="badge-custom">Docker</span>
-            <span class="badge-custom">MLflow</span>
-            <span class="badge-custom">Power BI</span>
-            <span class="badge-custom">SQL</span>
-        </div>
-
-        <!-- ========================================= -->
-        <!-- CERTIFICATIONS                           -->
-        <!-- ========================================= -->
-        <h2 class="section-title"><i class="fas fa-award"></i> Certifications</h2>
-        <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="badge-custom"><i class="fas fa-microchip me-1"></i>NVIDIA DLI (6)</span>
-            <span class="badge-custom"><i class="fab fa-ibm me-1"></i>IBM (10+)</span>
-            <span class="badge-custom"><i class="fab fa-facebook me-1"></i>Meta (7)</span>
-            <span class="badge-custom"><i class="fas fa-chart-bar me-1"></i>Fractal Analytics</span>
-        </div>
-
-        <!-- ========================================= -->
-        <!-- CONTACT                                  -->
-        <!-- ========================================= -->
-        <h2 class="section-title"><i class="fas fa-envelope"></i> Me contacter</h2>
-        <div class="d-flex flex-wrap gap-3">
-            <a href="https://www.linkedin.com/in/kabange-mbuya-sylvain-a662983b2" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin-in fa-fw"></i> LinkedIn
-            </a>
-            <a href="mailto:kabange.sylvain@horizon-university.tn" class="contact-link">
-                <i class="fas fa-envelope fa-fw"></i> Email
-            </a>
-            <a href="https://github.com/kabangesylvain-ui" target="_blank" class="contact-link">
-                <i class="fab fa-github fa-fw"></i> GitHub
-            </a>
-        </div>
-
-        <!-- ---------- FOOTER ---------- -->
-        <footer>
-            <p>© 2026 Kabange Mbuyu Sylvain — <em>“Transformer les données en solutions intelligentes.”</em></p>
-        </footer>
+    <!-- ---------- BADGES ---------- -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <span class="badge-custom"><i class="fas fa-graduation-cap me-1"></i>Master 2 @HorizonSchool</span>
+      <span class="badge-custom"><i class="fas fa-certificate me-1"></i>IBM · NVIDIA · Meta</span>
+      <span class="badge-custom"><i class="fas fa-microchip me-1"></i>IA · Computer Vision · NLP</span>
     </div>
 
     <!-- ========================================= -->
-    <!-- BOOTSTRAP JS                              -->
+    <!-- PROJETS                                  -->
     <!-- ========================================= -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <h2 class="section-title" id="projets"><i class="fas fa-rocket"></i> Projets</h2>
+    <div class="row g-4">
+      <!-- Carte 1 : Smart Agriculture -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <h5><i class="fas fa-leaf me-2" style="color:#3fb950;"></i>Smart Agriculture</h5>
+          <p class="text-secondary" style="font-size:0.95rem;">Détection des maladies des plantes par Deep Learning.</p>
+          <div>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">DeepLabV3+</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
+          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 97,8% accuracy · IoU 95,76%</div>
+          <a href="https://github.com/kabangesylvain-ui/smart-agriculture-plant-disease" target="_blank" class="btn-outline-github mt-3">
+            <i class="fab fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte 2 : Gestion des Événements -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <h5><i class="fas fa-building me-2" style="color:#f0883e;"></i>Gestion des Événements</h5>
+          <p class="text-secondary" style="font-size:0.95rem;">Stage GFI Tunisie – App Laravel + Power BI.</p>
+          <div>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">PHP</span>
+          </div>
+          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 92 réservations · 7 événements</div>
+          <a href="https://github.com/kabangesylvain-ui/gestion-evenements-reservation-salles" target="_blank" class="btn-outline-github mt-3">
+            <i class="fab fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte 3 : NLP -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <h5><i class="fas fa-brain me-2" style="color:#d2a8ff;"></i>NLP - RNN vs LSTM</h5>
+          <p class="text-secondary" style="font-size:0.95rem;">Classification de sentiments sur IMDb.</p>
+          <div>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">RNN</span>
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> LSTM 84,30% (+11,06 pts)</div>
+          <a href="https://github.com/kabangesylvain-ui/nlp-rnn-lstm-sentiment-analysis" target="_blank" class="btn-outline-github mt-3">
+            <i class="fab fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- ========================================= -->
-    <!-- JAVASCRIPT : GALERIE + SCROLL TOP        -->
+    <!-- GALERIE D'IMAGES (10 images)             -->
     <!-- ========================================= -->
-    <script>
-        // -----------------------------------------
-        // 1. GESTION DE LA GALERIE D'IMAGES
-        // -----------------------------------------
-        const images = [
-            { src: 'Page d\'accueil.png', alt: 'Page d\'accueil' },
-            { src: 'EDA.png', alt: 'Analyse exploratoire' },
-            { src: 'Matrice de confusion.png', alt: 'Matrice de confusion' },
-            { src: 'Métrique.png', alt: 'Métriques' },
-            { src: 'Graphique.png', alt: 'Graphiques' },
-            { src: 'architecture.png', alt: 'Architecture du projet' },
-            { src: 'capteur.png', alt: 'Capteurs IoT' }
-        ];
+    <h2 class="section-title" id="galerie"><i class="fas fa-images"></i> Galerie · Projets</h2>
+    <div class="gallery-grid" id="gallery">
+      <!-- Les 10 images seront injectées par JavaScript -->
+    </div>
 
-        function chargerGalerie() {
-            const conteneur = document.getElementById('gallery');
-            conteneur.innerHTML = ''; // Vider
+    <!-- ========================================= -->
+    <!-- COMPÉTENCES                              -->
+    <!-- ========================================= -->
+    <h2 class="section-title" id="competences"><i class="fas fa-tools"></i> Compétences</h2>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <span class="badge-custom">Python</span>
+      <span class="badge-custom">PyTorch</span>
+      <span class="badge-custom">Deep Learning</span>
+      <span class="badge-custom">Computer Vision</span>
+      <span class="badge-custom">NLP</span>
+      <span class="badge-custom">Spark</span>
+      <span class="badge-custom">Hadoop</span>
+      <span class="badge-custom">AWS</span>
+      <span class="badge-custom">Docker</span>
+      <span class="badge-custom">MLflow</span>
+      <span class="badge-custom">Power BI</span>
+      <span class="badge-custom">SQL</span>
+    </div>
 
-            images.forEach(img => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <img src="images/${img.src}" alt="${img.alt}" />
-                    <p>${img.alt}</p>
-                `;
-                conteneur.appendChild(card);
-            });
+    <!-- ========================================= -->
+    <!-- CERTIFICATIONS                           -->
+    <!-- ========================================= -->
+    <h2 class="section-title"><i class="fas fa-award"></i> Certifications</h2>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <span class="badge-custom"><i class="fas fa-microchip me-1"></i>NVIDIA DLI (6)</span>
+      <span class="badge-custom"><i class="fab fa-ibm me-1"></i>IBM (10+)</span>
+      <span class="badge-custom"><i class="fab fa-facebook me-1"></i>Meta (7)</span>
+      <span class="badge-custom"><i class="fas fa-chart-bar me-1"></i>Fractal Analytics</span>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- CONTACT                                  -->
+    <!-- ========================================= -->
+    <h2 class="section-title" id="contact"><i class="fas fa-envelope"></i> Me contacter</h2>
+    <div class="d-flex flex-wrap gap-3">
+      <a href="https://www.linkedin.com/in/kabange-mbuya-sylvain-a662983b2" target="_blank" class="contact-link">
+        <i class="fab fa-linkedin-in fa-fw"></i> LinkedIn
+      </a>
+      <a href="mailto:kabange.sylvain@horizon-university.tn" class="contact-link">
+        <i class="fas fa-envelope fa-fw"></i> Email
+      </a>
+      <a href="https://github.com/kabangesylvain-ui" target="_blank" class="contact-link">
+        <i class="fab fa-github fa-fw"></i> GitHub
+      </a>
+    </div>
+
+    <!-- ---------- FOOTER ---------- -->
+    <footer>
+      <p>© 2026 Kabange Mbuyu Sylvain — <em>“Transformer les données en solutions intelligentes.”</em></p>
+    </footer>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- BOOTSTRAP JS                              -->
+  <!-- ========================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- ========================================= -->
+  <!-- JAVASCRIPT : GALERIE, NAV, SCROLL TOP    -->
+  <!-- ========================================= -->
+  <script>
+    // -----------------------------------------
+    // 1. LISTE DES 10 IMAGES
+    // -----------------------------------------
+    const images = [
+      { src: 'modelisation.png', alt: 'Modélisation' },
+      { src: 'yolo.png', alt: 'YOLO' },
+      { src: 'RNN.png', alt: 'RNN' },
+      { src: 'Distribution.png', alt: 'Distribution' },
+      { src: 'R1.png', alt: 'Résultat 1' },
+      { src: 'courbe.png', alt: 'Courbe' },
+      { src: 'Controle de version.png', alt: 'Contrôle de version' },
+      { src: 'jeux des données.png', alt: 'Jeux de données' },
+      { src: 'Matrice de confusion.png', alt: 'Matrice de confusion' },
+      { src: '1.png', alt: 'Image 1' }
+    ];
+
+    // -----------------------------------------
+    // 2. AFFICHAGE DE LA GALERIE
+    // -----------------------------------------
+    function chargerGalerie() {
+      const conteneur = document.getElementById('gallery');
+      conteneur.innerHTML = '';
+      images.forEach(img => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        // Ajout d'un fallback si l'image n'existe pas
+        card.innerHTML = `
+          <img src="images/${img.src}" alt="${img.alt}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a2332/58a6ff?text=Image+introuvable'"/>
+          <p>${img.alt}</p>
+        `;
+        conteneur.appendChild(card);
+      });
+    }
+
+    // -----------------------------------------
+    // 3. NAVBAR ACTIVE (scroll spy léger)
+    // -----------------------------------------
+    function activeNavOnScroll() {
+      const sections = document.querySelectorAll('.section-title, h1, h2, .portfolio-card');
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+      let currentId = '';
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150) {
+          currentId = section.id || '';
         }
+      });
 
-        // Lancer le chargement au démarrage
-        document.addEventListener('DOMContentLoaded', chargerGalerie);
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
 
-        // -----------------------------------------
-        // 2. BOUTON RETOUR EN HAUT
-        // -----------------------------------------
-        const scrollBtn = document.getElementById('scrollTopBtn');
+    // -----------------------------------------
+    // 4. BOUTON RETOUR EN HAUT
+    // -----------------------------------------
+    const scrollBtn = document.getElementById('scrollTopBtn');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'flex';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+      activeNavOnScroll();
+    });
 
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // -----------------------------------------
+    // 5. INIT
+    // -----------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      chargerGalerie();
+      activeNavOnScroll();
+    });
+  </script>
 
 </body>
 </html>
