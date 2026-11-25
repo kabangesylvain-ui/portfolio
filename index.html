@@ -824,7 +824,7 @@
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---------- PAGE LOADER ---------- */
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       const loader = document.getElementById('page-loader');
       setTimeout(() => loader.classList.add('hidden'), 350);
     });
