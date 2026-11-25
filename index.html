@@ -565,7 +565,7 @@
 
       <!-- ---------- STATS ---------- -->
       <div class="stats-bar reveal-stagger">
-        <div class="stat-box"><div class="stat-number" data-count="3">0</div><div class="stat-label">Projets phares</div></div>
+        <div class="stat-box"><div class="stat-number" data-count="5">0</div><div class="stat-label">Projets phares</div></div>
         <div class="stat-box"><div class="stat-number" data-count="97" data-suffix="%">0</div><div class="stat-label">Précision top modèle</div></div>
         <div class="stat-box"><div class="stat-number" data-count="23" data-suffix="+">0</div><div class="stat-label">Certifications</div></div>
         <div class="stat-box"><div class="stat-number" data-count="2">0</div><div class="stat-label">Diplômes (Licence+Master)</div></div>
@@ -587,7 +587,7 @@
         </p>
         <p>
           <i class="fas fa-bullseye me-2" style="color:var(--orange);"></i>
-      
+          Actuellement à la recherche d'un <span class="highlight-text">stage de fin d'études (4-6 mois)</span> en Data Science, IA ou MLOps.
         </p>
       </div>
     </div>
@@ -621,16 +621,7 @@
       <div class="timeline-item">
         <div class="presentation-card">
           <p>
-            <i class="fas fa-microchip me-2" style="color:var(--orange);"></i>
-            Programme co-construit avec <span class="highlight-text">Novation AI Center of Excellence</span>.
-            Certifications <span class="highlight-text">NVIDIA</span> et formation sur les technologies de pointe (GenAI, LLM, RAG, MLOps).
-          </p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="presentation-card">
-          <p>
-            <i class="fas fa-school me-2" style="color:var(--purple);"></i>
+            <i class="fas fa-school me-2" style="color:var(--orange);"></i>
             <span class="highlight-text">Baccalauréat — Humanités</span>
             — Complexe Scolaire Galaxie
           </p>
@@ -641,6 +632,40 @@
     <!-- ---------- PROJETS ---------- -->
     <h2 class="section-title reveal" id="projets"><i class="fas fa-rocket"></i> Projets</h2>
     <div class="row g-4 reveal-stagger">
+      
+      <!-- Projet 1 : RAG -->
+      <div class="col-md-4">
+        <div class="project-card tilt-card">
+          <h5><i class="fas fa-robot me-2" style="color:var(--purple);"></i>Assistant RAG (LVMH)</h5>
+          <p class="text-secondary" style="font-size:0.95rem;">Pipeline RAG complet avec LangChain et FAISS.</p>
+          <div>
+            <span class="tech-tag">Python</span><span class="tech-tag">LangChain</span>
+            <span class="tech-tag">FAISS</span><span class="tech-tag">LLM</span>
+          </div>
+          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> Évaluation de pertinence 100%</div>
+          <a href="https://github.com/kabangesylvain-ui/rag-langchain-llm" target="_blank" class="btn-outline-github mt-3">
+            <i class="fab fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 2 : Churn BNP -->
+      <div class="col-md-4">
+        <div class="project-card tilt-card">
+          <h5><i class="fas fa-chart-line me-2" style="color:var(--blue);"></i>Détection de Churn (BNP)</h5>
+          <p class="text-secondary" style="font-size:0.95rem;">Modélisation prédictive et API REST.</p>
+          <div>
+            <span class="tech-tag">Python</span><span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">FastAPI</span><span class="tech-tag">SHAP</span>
+          </div>
+          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> F1 0,64 · ROC-AUC 0,87</div>
+          <a href="https://github.com/kabangesylvain-ui/churn-bnp-paribas" target="_blank" class="btn-outline-github mt-3">
+            <i class="fab fa-github"></i> Voir sur GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 3 : Smart Agriculture -->
       <div class="col-md-4">
         <div class="project-card tilt-card">
           <h5><i class="fas fa-leaf me-2" style="color:var(--green);"></i>Smart Agriculture</h5>
@@ -655,28 +680,9 @@
           </a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="project-card tilt-card">
-          <h5><i class="fas fa-building me-2" style="color:var(--orange);"></i>Gestion des Événements</h5>
-          <p class="text-secondary" style="font-size:0.95rem;">Stage GFI Tunisie – App Laravel + Power BI.</p>
-          <div>
-            <span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Power BI</span><span class="tech-tag">PHP</span>
-          </div>
-          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> 92 réservations · 7 événements</div>
-          <a href="https://github.com/kabangesylvain-ui/gestion-evenements-reservation-salles" target="_blank" class="btn-outline-github mt-3">
-            <i class="fab fa-github"></i> Voir sur GitHub
-          </a>
-        </div>
-      </div>
+
+      <!-- Projet 4 : NLP -->
       <div class="col-md-4">
         <div class="project-card tilt-card">
           <h5><i class="fas fa-brain me-2" style="color:var(--purple);"></i>NLP - RNN vs LSTM</h5>
-          <p class="text-secondary" style="font-size:0.95rem;">Classification de sentiments sur IMDb.</p>
-          <div>
-            <span class="tech-tag">PyTorch</span><span class="tech-tag">RNN</span>
-            <span class="tech-tag">LSTM</span><span class="tech-tag">Streamlit</span>
-          </div>
-          <div class="result-badge mt-2"><i class="fas fa-check-circle"></i> LSTM 84,30% (+11,06 pts)</div>
-          <a href="https://github.com/kabangesylvain-ui/nlp-rnn-lstm-sentiment-analysis" target="_blank" class="btn-outline-github mt-3">
-            <i class="fab fa-github"></i> Voir sur GitHub
+          <p class="text-secondary" style="font-size:0.95rem;">Classification de sentiments
